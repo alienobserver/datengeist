@@ -1,9 +1,9 @@
 import os
 import sys
 
-APP_NAME = "geist"
+APP_NAME = "datengeist"
 APP_SCRIPT = "Sample_Dataset.py"
-VERSION = "0.0.3"
+VERSION = "0.0.1"
 
 # Additional Streamlit configurations
 RUN_CONFIGS = [

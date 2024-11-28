@@ -3,7 +3,7 @@ from functools import partial
 import pandas as pd
 import plotly.graph_objects as go
 
-from geist.utils.helper import truncate_str
+from datengeist.utils.helper import truncate_str
 
 
 def comparison_box_charts(dataframe: pd.DataFrame, feature_categorical: str, feature_continuous: str,

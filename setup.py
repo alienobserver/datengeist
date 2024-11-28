@@ -13,20 +13,20 @@ with open(reqs_filename, 'r') as file:
     reqs = file_content.splitlines()
 
 setup(
-    name='geist',
-    version='0.0.3',
+    name='datengeist',
+    version='0.0.1',
     description='Application for easy understanding of unstructured data',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
-    url='https://github.com/alienobserver/cookie',
+    url='https://github.com/alienobserver/datengeist',
     author='Narek Aristakesyan',
     author_email='aristakesyannarek11@gmail.com',
     license='Apache License 2.0',
-    package_dir={"geist":"geist"},
+    package_dir={"datengeist":"datengeist"},
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'geist=geist.start:main',
+            'datengeist=datengeist.start:main',
         ]
     },
     install_requires=reqs,

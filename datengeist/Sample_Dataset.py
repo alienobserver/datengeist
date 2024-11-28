@@ -3,9 +3,9 @@ import random
 import pandas as pd
 import streamlit as st
 
-from geist.utils.helper import get_n_rows_features_csv
-from geist.utils.style import add_top_margin_div
-from geist.config.config import set_layout, init_uploader, init_db
+from datengeist.utils.helper import get_n_rows_features_csv
+from datengeist.utils.style import add_top_margin_div
+from datengeist.config.config import set_layout, init_uploader, init_db
 
 def sample_dataset(uploaded_file):
     """

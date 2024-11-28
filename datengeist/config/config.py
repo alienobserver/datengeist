@@ -7,11 +7,11 @@ project_root = os.path.dirname(os.path.dirname(os.path.dirname(__file__))) # 3 l
 sys.path.append(project_root)
 
 # Import custom modules
-from geist.utils.style import set_page_link_button_style, set_st_padding, set_logo, add_top_margin_div
-from geist.utils.feature_tools import filter_continuous_features, filter_categorical_features
-from geist.utils.session_control import get_st_session_df, initialize_backup_variable
-from geist.utils.helper import get_abs_filename
-from geist.utils.constants import CORR_TYPES
+from datengeist.utils.style import set_page_link_button_style, set_st_padding, set_logo, add_top_margin_div
+from datengeist.utils.feature_tools import filter_continuous_features, filter_categorical_features
+from datengeist.utils.session_control import get_st_session_df, initialize_backup_variable
+from datengeist.utils.helper import get_abs_filename
+from datengeist.utils.constants import CORR_TYPES
 
 def set_layout():
     # ---- Application Configuration ----
@@ -22,7 +22,7 @@ def set_layout():
 
     # ---- Logo Setup ----
     # Load and display the logo in the sidebar
-    logo_path = get_abs_filename('geist/assets/logo/logo.png')
+    logo_path = get_abs_filename('datengeist/assets/logo/logo.png')
     set_logo(logo_path)
 
 def init_uploader():

@@ -1,10 +1,10 @@
 import streamlit as st
 
-from geist.config.config import set_layout, init_uploader, init_db
-from geist.utils.session_control import get_st_session_df
-from geist.utils.style import add_top_margin_div
-from geist.visual.distribution_chart import feature_categories_pie_chart
-from geist.visual.missing_value import missing_values_bar_chart
+from datengeist.config.config import set_layout, init_uploader, init_db
+from datengeist.utils.session_control import get_st_session_df
+from datengeist.utils.style import add_top_margin_div
+from datengeist.visual.distribution_chart import feature_categories_pie_chart
+from datengeist.visual.missing_value import missing_values_bar_chart
 
 
 def general_info():

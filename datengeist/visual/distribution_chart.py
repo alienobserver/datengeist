@@ -4,10 +4,10 @@ import pandas as pd
 import plotly.graph_objects as go
 from scipy.stats import norm
 
-from geist.utils.feature_tools import filter_str_categorical_features, \
+from datengeist.utils.feature_tools import filter_str_categorical_features, \
     filter_num_categorical_features, filter_continuous_features
-from geist.utils.helper import truncate_str
-from geist.utils.style import ColorGenerator
+from datengeist.utils.helper import truncate_str
+from datengeist.utils.style import ColorGenerator
 
 
 def box_chart(dataframe: pd.DataFrame, column: str, max_str_len: int = 15) -> go.Figure:

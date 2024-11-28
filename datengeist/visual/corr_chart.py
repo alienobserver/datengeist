@@ -1,8 +1,8 @@
 import numpy as np
 import plotly.graph_objects as go
 
-from geist.utils.calc import cramers_matrix, point_biserial_matrix
-from geist.utils.helper import truncate_str
+from datengeist.utils.calc import cramers_matrix, point_biserial_matrix
+from datengeist.utils.helper import truncate_str
 
 
 class CorrChart:

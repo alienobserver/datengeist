@@ -2,12 +2,12 @@ import pandas as pd
 import streamlit as st
 import pandas.api.types as ptypes
 
-from geist.config.config import set_layout, init_uploader, init_db
-from geist.utils.feature_tools import is_categorical
-from geist.utils.session_control import get_st_session_df, set_initial_variable_to_current, get_state_variable
-from geist.utils.style import set_st_hz_block, add_top_margin_div
-from geist.visual.distribution_chart import hist_chart, box_chart, pie_chart
-from geist.visual.missing_value import MissingValPieChart
+from datengeist.config.config import set_layout, init_uploader, init_db
+from datengeist.utils.feature_tools import is_categorical
+from datengeist.utils.session_control import get_st_session_df, set_initial_variable_to_current, get_state_variable
+from datengeist.utils.style import set_st_hz_block, add_top_margin_div
+from datengeist.visual.distribution_chart import hist_chart, box_chart, pie_chart
+from datengeist.visual.missing_value import MissingValPieChart
 
 
 def feature_info_charts():

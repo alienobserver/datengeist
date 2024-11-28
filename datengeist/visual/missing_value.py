@@ -4,9 +4,9 @@ import pandas as pd
 
 import streamlit as st
 
-from geist.utils.feature_tools import count_missing_values_column
-from geist.utils.helper import truncate_str
-from geist.utils.session_control import get_state_variable
+from datengeist.utils.feature_tools import count_missing_values_column
+from datengeist.utils.helper import truncate_str
+from datengeist.utils.session_control import get_state_variable
 
 
 class MissingValPieChart:

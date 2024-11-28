@@ -1,13 +1,13 @@
 import streamlit as st
 
-from geist.config.config import set_layout, init_db
-from geist.utils.constants import CORR_TYPES
-from geist.utils.feature_tools import filter_continuous_features, filter_categorical_features
-from geist.utils.session_control import get_st_session_df, set_initial_variable_to_current, get_state_variable, \
+from datengeist.config.config import set_layout, init_db
+from datengeist.utils.constants import CORR_TYPES
+from datengeist.utils.feature_tools import filter_continuous_features, filter_categorical_features
+from datengeist.utils.session_control import get_st_session_df, set_initial_variable_to_current, get_state_variable, \
     initialize_backup_variable
-from geist.visual.corr_chart import CorrChart
+from datengeist.visual.corr_chart import CorrChart
 
-from geist.visual.comparison_chart import comparison_box_charts
+from datengeist.visual.comparison_chart import comparison_box_charts
 
 def compare_features():
     """
