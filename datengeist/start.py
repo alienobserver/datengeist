@@ -13,7 +13,7 @@ RUN_CONFIGS = [
     "--theme.base dark",
     "--theme.backgroundColor black",
     "--theme.secondaryBackgroundColor '#333333'",
-    # "--client.showErrorDetails false",
+    "--client.showErrorDetails false",
     "--server.maxUploadSize=500"
 ]
 
@@ -43,7 +43,7 @@ def start():
 
     configs_str = ' '.join(RUN_CONFIGS)
 
-    print(f"Starting Cookie ...")
+    print(f"Starting {APP_NAME.capitalize()} ...")
 
     # Build the Streamlit command
     os.system(f"streamlit run {app_path} {configs_str}")
@@ -75,7 +75,7 @@ def main():
             print(f"Error: Got unexpected argument ({sys.argv[2]})")
             return
 
-        print(f"Cookie, version {VERSION}")
+        print(f"{APP_NAME.capitalize()}, version {VERSION}")
         return
 
     else:
