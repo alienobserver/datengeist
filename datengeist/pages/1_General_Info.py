@@ -44,11 +44,14 @@ def general_info():
             col21, col22 = st.columns(2, gap='large')
 
             # Calculate percentages of complete and incomplete instances
-            complete_instances_pct = round(dataframe.dropna().shape[0] / dataframe.shape[0] * 100, 1)
-            incomplete_instances_pct = round(100 - complete_instances_pct, 1)
+            db_size = dataframe.shape[0] * dataframe.shape[1]
+            n_nan_values_in_db = dataframe.isna().sum().sum()
+            n_nan_instances_in_db = dataframe.dropna().shape[0]
+            incomplete_instances_pct = round(n_nan_instances_in_db / dataframe.shape[0] * 100, 1)
+            incomplete_values_pct = round(n_nan_values_in_db / db_size * 100, 1)
 
-            col21.metric('Percentage of Complete Instances', f'{complete_instances_pct} %')
-            col22.metric('Percentage of Incomplete Instances', f'{incomplete_instances_pct} %')
+            col21.metric('Percentage of Incomplete Instances', f'{incomplete_instances_pct} %')
+            col22.metric('Percentage of Incomplete Values', f'{incomplete_values_pct} %')
 
             # Add spacing and display missing values bar chart if there are NaN values
             add_top_margin_div(50)

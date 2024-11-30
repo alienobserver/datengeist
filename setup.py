@@ -14,7 +14,7 @@ with open(reqs_filename, 'r') as file:
 
 setup(
     name='datengeist',
-    version='0.0.1',
+    version='0.0.3',
     description='Application for easy understanding of unstructured data',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',

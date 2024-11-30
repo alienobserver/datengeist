@@ -49,6 +49,14 @@ def init_uploader():
 
     # Reset session data if a new file is uploaded
     if st.session_state['uploaded_file'] is None:
+        dataframe = get_st_session_df('sampled_df')
+        nominal_features = dataframe.select_dtypes(include=['object'])
+
+        for col in nominal_features:
+            if f'text_input_missing_{col}' in st.session_state:
+                st.session_state.pop(f'text_input_missing_{col}')
+            st.session_state.pop(f'backup_text_input_missing_{col}')
+
         st.session_state.pop('sampled_df', None)
         st.session_state.pop('raw_csv_file', None)
 

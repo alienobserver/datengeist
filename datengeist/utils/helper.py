@@ -72,3 +72,22 @@ def get_n_rows_features_csv(uploaded_file) -> tuple:
     n_features = len(raw_csv_file_split[0].split(','))  # Count columns in the first line
 
     return n_rows, n_features
+
+
+def bytes_to_human_readable(num_bytes):
+    """
+    Converts a number of bytes to a human-readable format (e.g., KB, MB, GB).
+
+    Parameters:
+    - num_bytes: int or float - The size in bytes.
+    Returns:
+    - str - The size in the most suitable unit with 2 decimal precision.
+    """
+    units = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
+    unit_index = 0
+
+    while num_bytes >= 1024 and unit_index < len(units) - 1:
+        num_bytes /= 1024
+        unit_index += 1
+
+    return f"{num_bytes:.2f} {units[unit_index]}"

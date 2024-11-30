@@ -3,7 +3,7 @@ import random
 import pandas as pd
 import streamlit as st
 
-from datengeist.utils.helper import get_n_rows_features_csv
+from datengeist.utils.helper import get_n_rows_features_csv, bytes_to_human_readable
 from datengeist.utils.style import add_top_margin_div
 from datengeist.config.config import set_layout, init_uploader, init_db
 
@@ -71,7 +71,6 @@ def sample_dataset(uploaded_file):
                     if uploaded_file.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
                         dataframe = pd.read_excel(uploaded_file)
                     elif uploaded_file.type == 'text/csv':
-                        print(uploaded_file)
                         dataframe = pd.read_csv(uploaded_file)
                 else:
                     # Randomly select rows to skip to create a sampled subset
@@ -96,9 +95,8 @@ def sample_dataset(uploaded_file):
         with cols[3]:
             # Estimate dataset size in bytes after sampling
             db_size_bytes = uploaded_file.size if keep_all_db else (sample_size / n_rows * uploaded_file.size)
-            db_size_mb = db_size_bytes / (1024 * 1024)
-
-            st.metric("Dataset Size After Sampling", f"{db_size_mb:.3f} MB")
+            
+            st.metric("Dataset Size After Sampling", bytes_to_human_readable(db_size_bytes))
 
         add_top_margin_div(50)
 

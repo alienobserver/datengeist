@@ -140,8 +140,6 @@ def pie_chart(dataframe: pd.DataFrame, column: str, max_cats: int = 10, max_str_
     df_value_counts = dataframe[column].value_counts()
     df_value_counts_top = df_value_counts.head(max_cats)
 
-    print(df_value_counts)
-
     others = df_value_counts[max_cats:].sum()
     others_pd_series = pd.Series({'Others': others})
     df_most_frequent_with_others = pd.concat([df_value_counts_top, others_pd_series])
@@ -173,7 +171,10 @@ def pie_chart(dataframe: pd.DataFrame, column: str, max_cats: int = 10, max_str_
         hoverinfo='label+percent+value',
         marker=dict(
             colors=custom_colors
-        )
+        ),
+        pull=[0, 0, 0, 0,
+              0, 0, 0, 0,
+              0, 0, 0.2]
     ))
 
     # Update layout

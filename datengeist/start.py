@@ -3,7 +3,7 @@ import sys
 
 APP_NAME = "datengeist"
 APP_SCRIPT = "Sample_Dataset.py"
-VERSION = "0.0.1"
+VERSION = "0.0.3"
 
 # Additional Streamlit configurations
 RUN_CONFIGS = [

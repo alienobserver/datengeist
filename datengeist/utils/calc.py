@@ -29,7 +29,7 @@ def cramers_v(x: pd.Series, y: pd.Series) -> float:
 
     return v
 
-@st.cache_data(persist='disk')
+@st.cache_data(persist='disk', show_spinner='Calculating Cramér\'s V Matrix')
 def cramers_matrix(df: pd.DataFrame) -> pd.DataFrame:
     """
     Generate a matrix of Cramér's V statistics for all pairs of categorical variables in a DataFrame.
@@ -53,7 +53,7 @@ def cramers_matrix(df: pd.DataFrame) -> pd.DataFrame:
 
     return cramers_v_matrix
 
-@st.cache_data(persist='disk')
+@st.cache_data(persist='disk', show_spinner='Calculating Pearson Correlation Matrix')
 def point_biserial_matrix(df: pd.DataFrame) -> pd.DataFrame:
     """
     Generate a matrix of point-biserial correlation coefficients for numerical variables in a DataFrame.
